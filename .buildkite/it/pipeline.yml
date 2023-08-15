@@ -4,3 +4,6 @@ agents:
 steps:
   - label: "Run IT Test"
     command: bash .buildkite/ci.sh
+    agents:
+      memory: "4G"
+      cpu: 2
