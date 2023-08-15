@@ -3,4 +3,4 @@ agents:
 
 steps:
   - label: "Run IT Test"
-    command: echo "TODO"
+    command: bash .buildkite/it/ci.sh
