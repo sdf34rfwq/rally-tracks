@@ -5,5 +5,5 @@ steps:
   - label: "Run IT Test"
     command: bash .buildkite/ci.sh
     agents:
-      memory: "4G"
-      cpu: 2
+      memory: "12G"
+      cpu: 4
