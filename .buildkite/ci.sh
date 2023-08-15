@@ -41,8 +41,7 @@ echo "--- System dependencies"
 retry 5 apt-get update
 retry 5 apt-get install -y \
     git make jq      \
-    openjdk-17-jdk-headless openjdk-11-jdk-headless
-export JAVA11_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    openjdk-17-jdk-headless
 export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 echo "--- Configure Python ${PYTHON_VERSION} venv"
