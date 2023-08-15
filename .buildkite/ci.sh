@@ -1,7 +1,6 @@
 set -eo pipefail
 
 export TERM=dumb
-export LC_ALL=en_US.UTF-8
 export TZ=Etc/UTC
 export DEBIAN_FRONTEND=noninteractive
 # https://askubuntu.com/questions/1367139/apt-get-upgrade-auto-restart-services
@@ -41,8 +40,8 @@ function retry {
 }
 echo "--- System dependencies"
 
-retry 5 sudo apt-get update
-retry 5 sudo apt-get install -y \
+retry 5 apt-get update
+retry 5 apt-get install -y \
     git make jq      \
     openjdk-17-jdk-headless openjdk-11-jdk-headless
 export JAVA11_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -51,7 +50,6 @@ export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 echo "--- Configure Python ${PYTHON_VERSION} venv"
 
 export TERM=dumb
-export LC_ALL=en_US.UTF-8
 
 python -m pip install .[develop]
 
