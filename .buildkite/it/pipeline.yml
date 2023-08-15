@@ -4,6 +4,9 @@ agents:
 steps:
   - label: "Run IT Test"
     command: bash .buildkite/ci.sh
+    artifact_paths:
+      - ".rally/logs/"
+      - ".rally/benchmarks/races/**/*.log"
     agents:
       memory: "12G"
       cpu: 4
