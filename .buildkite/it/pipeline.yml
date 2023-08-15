@@ -3,4 +3,4 @@ agents:
 
 steps:
   - label: "Run IT Test"
-    command: bash .buildkite/it/ci.sh
+    command: bash .buildkite/ci.sh
