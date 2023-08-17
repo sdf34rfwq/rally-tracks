@@ -5,8 +5,8 @@ steps:
   - label: "Run IT Test"
     command: bash .buildkite/ci.sh
     artifact_paths:
-      - ".rally/logs/"
-      - ".rally/benchmarks/races/**/*.log"
+      - "/home/elastic/.rally/logs/**"
+      - "/home/elastic/.rally/benchmarks/races/**/*.log"
     agents:  
       imageUID: "666"
       memory: "12G"
