@@ -10,4 +10,5 @@ steps:
     agents:  
       imageUID: "666"
       memory: "12G"
+      ephemeralStorage: "20G"
       cpu: 4
