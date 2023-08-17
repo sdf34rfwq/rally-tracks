@@ -38,6 +38,7 @@ function retry {
 }
 echo "--- System dependencies"
 export TERM=dumb
+sudo apt update
 sudo apt-get -y install openjdk-17-jdk-headless
 export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
