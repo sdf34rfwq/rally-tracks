@@ -37,16 +37,9 @@ function retry {
   return 0
 }
 echo "--- System dependencies"
-
-retry 5 apt-get update
-retry 5 apt-get install -y \
-    git make jq      \
-    openjdk-17-jdk-headless
-export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-
-echo "--- Configure Python ${PYTHON_VERSION} venv"
-
 export TERM=dumb
+sudo apt-get -y install openjdk-17-jdk-headless
+export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 python -m pip install .[develop]
 
