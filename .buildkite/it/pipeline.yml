@@ -7,6 +7,7 @@ steps:
     artifact_paths:
       - ".rally/logs/"
       - ".rally/benchmarks/races/**/*.log"
-    agents:
+    agents:  
+      imageUID: "666"
       memory: "12G"
       cpu: 4
