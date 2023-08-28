@@ -36,6 +36,16 @@ function retry {
   set -o pipefail
   return 0
 }
+function collect_ps_info {
+  [ -d /home/elastic/.rally/logs ] || mkdir -p /home/elastic/.rally/logs
+  sudo apt install procps -y
+  while true
+  do
+    date >> /home/elastic/.rally/logs/ps_info.log
+    ps -ef >> /home/elastic/.rally/logs/ps_info.log
+    sleep 60
+  done
+}
 echo "--- System dependencies"
 export TERM=dumb
 sudo apt update
@@ -43,6 +53,8 @@ sudo apt-get -y install openjdk-17-jdk-headless
 export JAVA17_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 python -m pip install .[develop]
+
+collect_ps_info &
 
 echo "--- Run IT test"
 
