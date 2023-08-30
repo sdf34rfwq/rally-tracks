@@ -43,6 +43,7 @@ function collect_ps_info {
   do
     date >> /home/elastic/.rally/logs/ps_info.log
     ps -ef >> /home/elastic/.rally/logs/ps_info.log
+    pstree >> /home/elastic/.rally/logs/ps_info.log
     sleep 60
   done
 }

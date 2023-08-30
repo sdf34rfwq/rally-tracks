@@ -4,11 +4,12 @@ agents:
 steps:
   - label: "Run IT Test"
     command: bash .buildkite/ci.sh
+    timeout_in_minutes: 120
     artifact_paths:
       - "/home/elastic/.rally/logs/**"
       - "/home/elastic/.rally/benchmarks/races/**/*.log"
     agents:  
       imageUID: "666"
-      memory: "12G"
+      memory: "24G"
       ephemeralStorage: "20G"
       cpu: 4
